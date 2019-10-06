@@ -1,0 +1,13 @@
+spring:
+ cloud:
+  config:
+   name: filmsServer
+   profile: default
+   lable: master
+   discovery:
+    serviceId: config-server
+    enable: true
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:7080/eureka

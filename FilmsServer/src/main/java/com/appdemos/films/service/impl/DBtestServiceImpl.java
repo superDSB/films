@@ -4,19 +4,23 @@ import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 
 import com.appdemos.films.entity.CelebrityInfo;
+import com.appdemos.films.entity.Test;
 import com.appdemos.films.mappers.CelebrityinfoMapper;
 import com.appdemos.films.service.DBtestService;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 @Service
 public class DBtestServiceImpl implements DBtestService {
 	@Autowired
+	private Test test;
+	@Autowired
 	private CelebrityinfoMapper celebrityInfoMapper;
 	@Override
 	public int getTotalCount() {
-		
+		System.out.println(test.getName());
 		return celebrityInfoMapper.selectCount(new EntityWrapper<CelebrityInfo>());
 	}
 

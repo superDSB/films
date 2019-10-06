@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.9.RELEASE</version>
+		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.appdemos</groupId>
@@ -34,27 +34,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-		    <groupId>com.baomidou</groupId>
-		    <artifactId>mybatis-plus</artifactId>
-		    <version>2.1.8</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>com.baomidou</groupId>
-		    <artifactId>mybatisplus-spring-boot-starter</artifactId>
-		    <version>1.0.5</version>
-		</dependency>
-		<dependency>
-		   <groupId>mysql</groupId>
-		   <artifactId>mysql-connector-java</artifactId>
-		   <scope>runtime</scope>
-		</dependency>
 	</dependencies>
-
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
@@ -64,4 +55,10 @@
 		</plugins>
 	</build>
 
+	<packaging>pom</packaging>
+	<modules>
+		<module>Configs</module>
+		<module>EurekaServer</module>
+		<module>FilmsServer</module>
+	</modules>
 </project>

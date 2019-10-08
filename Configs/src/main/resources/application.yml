@@ -2,13 +2,22 @@ server:
  port: 7070
 spring:
  application:
-  name: config-server
+  name: spring-cloud-configServer
  cloud:
   config:
    server:
     git:
      uri: https://github.com/superDSB/spring-cloud-config.git
      force-pull: true
+     username: superDSB
+     password: Lys10086
+management:
+ endpoints:
+  web:
+   exposure:
+    include: "*"
+ security:
+  enabled: false
 eureka:
  client:
   serviceUrl:

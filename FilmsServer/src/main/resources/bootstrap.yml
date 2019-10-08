@@ -5,8 +5,8 @@ spring:
    profile: default
    lable: master
    discovery:
-    serviceId: config-server
-    enable: true
+    serviceId: spring-cloud-configServer
+    enabled: true
 eureka:
  client:
   serviceUrl:

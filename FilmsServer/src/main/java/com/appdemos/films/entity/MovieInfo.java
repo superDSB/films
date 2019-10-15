@@ -14,10 +14,18 @@ public class MovieInfo {
 	private int duration;
 	private String releaseRegion;
 	private Date releaseDate;
+	private String productionCountry;
 	private String coverImageUrl;
 	private String description;
 	private String score;
 	private int scoreNum;
+	
+	public String getProductionCountry() {
+		return productionCountry;
+	}
+	public void setProductionCountry(String productionCountry) {
+		this.productionCountry = productionCountry;
+	}
 	public long getId() {
 		return id;
 	}

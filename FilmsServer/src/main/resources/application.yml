@@ -3,11 +3,6 @@ server:
  servlet:
   context-path: /films
 spring:
- datasource:
-  driver-class-name: com.mysql.cj.jdbc.Driver
-  username: root
-  password: lys10086
-  url: jdbc:mysql://127.0.0.1:3306/films?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
  application: 
   name: filmsServer
 mybatis-plus:

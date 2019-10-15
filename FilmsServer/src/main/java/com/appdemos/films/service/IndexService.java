@@ -8,4 +8,6 @@ import com.appdemos.films.entity.MovieInfo;
 public interface IndexService {
 	public IndexResultDTO getResult(int category);
 	public List<MovieInfo> refreshData(boolean onShow);
+	public List<MovieInfo> queryDataByName(String movieName,boolean onshow);
+	public IndexResultDTO getResult(String movieName);
 }

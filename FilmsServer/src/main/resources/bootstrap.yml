@@ -1,8 +1,8 @@
 spring:
  cloud:
   config:
-   name: filmsServer
-   profile: default
+   name: mysqlConfig
+   profile: pro
    lable: master
    discovery:
     serviceId: spring-cloud-configServer

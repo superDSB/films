@@ -38,5 +38,26 @@ public class IndexServiceImpl implements IndexService{
 		result.setOnNext(refreshData(false));
 		return result;
 	}
+	@Override
+	public List<MovieInfo> queryDataByName(String movieName,boolean onshow) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		EntityWrapper<MovieInfo> wrapper = new EntityWrapper<MovieInfo>();
+		wrapper.like("title", movieName);
+		movieInfoMapper.selectList(wrapper);
+		if(onshow){
+			wrapper.le("RELEASE_DATE", format.format(new Date()));
+		}else{
+			wrapper.gt("RELEASE_DATE", format.format(new Date()));
+		}
+		return movieInfoMapper.selectList(wrapper);
+	}
+	@Override
+	public IndexResultDTO getResult(String movieName) {
+		IndexResultDTO dto = new IndexResultDTO();
+		dto.setCategory(0);
+		dto.setOnShow(queryDataByName(movieName, true));
+		dto.setOnNext(queryDataByName(movieName, false));
+		return dto;
+	}
 
 }

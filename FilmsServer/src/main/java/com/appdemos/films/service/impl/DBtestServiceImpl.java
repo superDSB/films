@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.appdemos.films.entity.CelebrityInfo;
 import com.appdemos.films.entity.MovieInfo;
-import com.appdemos.films.entity.Test;
 import com.appdemos.films.mappers.CelebrityinfoMapper;
 import com.appdemos.films.mappers.MovieInfoMapper;
 import com.appdemos.films.service.DBtestService;
@@ -17,15 +16,15 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 @Service
 public class DBtestServiceImpl implements DBtestService {
 	@Autowired
-	private Test test;
-	@Autowired
 	private CelebrityinfoMapper celebrityInfoMapper;
 	@Autowired
 	private MovieInfoMapper movieInfoMapper;
 	@Override
 	public int getTotalCount() {
-		System.out.println(test.getName());
-		return celebrityInfoMapper.selectCount(new EntityWrapper<CelebrityInfo>());
+		CelebrityInfo info = new CelebrityInfo();
+		info.setCname("雷逗比");
+		return celebrityInfoMapper.getTotal(info);
+		//return celebrityInfoMapper.selectCount(new EntityWrapper<CelebrityInfo>());
 	}
 
 	@Override

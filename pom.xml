@@ -60,5 +60,6 @@
 		<module>Configs</module>
 		<module>EurekaServer</module>
 		<module>FilmsServer</module>
+		<module>FilmsClient</module>
 	</modules>
 </project>

@@ -2,7 +2,7 @@ spring:
  cloud:
   config:
    name: mysqlConfig
-   profile: pro
+   profile: default
    lable: master
    discovery:
     serviceId: spring-cloud-configServer
